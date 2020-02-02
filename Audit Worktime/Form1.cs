@@ -282,7 +282,7 @@ namespace Audit_Worktime
             bool date_today = false;
             string res="0";
 
-            if (curr_selected_date == DateTime.Today)
+            if (curr_selected_date.Date == DateTime.Today)
             {
                 curr_date = DateTime.Now;
                 start_time = DateTime.Today;
@@ -328,7 +328,7 @@ namespace Audit_Worktime
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             //MessageBox.Show(e.End.Date.ToLongDateString());
-            if (!backgroundWorkerParseEvents.IsBusy) selected_date = e.End;
+            if (!backgroundWorkerParseEvents.IsBusy) selected_date = e.End.Date;
         }
 
         private void btnGetMonthHours_Click(object sender, EventArgs e)
